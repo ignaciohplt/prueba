@@ -1,13 +1,13 @@
-cat > pages/api/send-whatsapp.js << 'EOF'
-// pages/api/send-whatsapp.js
-import twilio from 'twilio';
+cat > api/send-whatsapp.js << 'EOF'
+// api/send-whatsapp.js
+const twilio = require('twilio');
 
 const client = twilio(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
 );
 
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Only POST allowed' });
   }
@@ -23,5 +23,5 @@ export default async function handler(req, res) {
     console.error(err);
     return res.status(500).json({ error: err.message });
   }
-}
+};
 EOF
