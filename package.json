@@ -4,14 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "dev":   "next dev",
-    "build": "next build",
     "start": "next start",
+    "build": "next build",
+    "dev": "next dev",
     "start-whatsapp": "node whatsapp-bot.js"
   },
   "dependencies": {
+    "formidable": "^3.5.4",
     "next": "^15.3.1",
     "pdfkit": "^0.17.0",
     "puppeteer": "^24.7.2",
